@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {Button} from "./components/Button/Button";
+import Box from "./components/Box/Box";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [active, setActive] = useState(true)
+    const [animateTime, setAnimateTime] = useState(0)
+
+
+    return (
+        <div className="App">
+            <div className={'wrapperBtn'}>
+                <Box active={true}>1</Box>
+                <Box active={false}>2</Box>
+            </div>
+
+            <Button active={active}
+                    setActive={setActive}
+            >START</Button>
+        </div>
+    );
 }
 
 export default App;
